@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+}
+
+jar {
+    baseName = 'cfca-sdk-java'
+}
+
+group = 'com.github.aichao-liu'
+version = '1.0.1'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact 'library/SADK3.1.0.7-0.0.1.jar' // Publish a file created outside of the build
+        }
+    }
+}
